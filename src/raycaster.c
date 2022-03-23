@@ -6,7 +6,7 @@
 /*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:33:32 by sstyr             #+#    #+#             */
-/*   Updated: 2022/03/23 19:48:40 by jmacmill         ###   ########.fr       */
+/*   Updated: 2022/03/23 20:10:53 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,6 @@ int	ft_raycasting(t_raycast *rc)
 int	ft_mlx(t_raycast *rc)
 {
 	ft_init_ray(rc);
-	printf("here\n");
 	rc->data.mlx_ptr = mlx_init();
 	if (!rc->data.mlx_ptr)
 		ft_error(rc, "Mlx init impossible\n");
@@ -79,7 +78,7 @@ int	ft_mlx(t_raycast *rc)
 	rc->data.addr = (int *)mlx_get_data_addr(rc->data.img, &rc->data. \
 		bits_per_pixel, &rc->data.line_length, &rc->data.endian);
 	rc->data.mlx_win = mlx_new_window(rc->data.mlx_ptr, rc->screenx, \
-		rc->screeny, "Hello world!");
+		rc->screeny, "cub3d");
 	mlx_hook(rc->data.mlx_win, 33, 1L << 17, ft_exit, rc);
 	mlx_hook(rc->data.mlx_win, 2, 1L << 0, ft_key_press, rc);
 	mlx_loop_hook(rc->data.mlx_ptr, ft_raycasting, rc);

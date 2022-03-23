@@ -6,7 +6,7 @@
 /*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:37:05 by jmacmill          #+#    #+#             */
-/*   Updated: 2022/03/23 18:37:08 by jmacmill         ###   ########.fr       */
+/*   Updated: 2022/03/23 20:08:00 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void	get_features(int *i, t_data *data)
 	}
 	else if (check_color('F', *i, data))
 	{
-		write(1, "parse F\n", 8);
 		(*i) += 1;
 		parse_color(i, data, 'F');
 	}
