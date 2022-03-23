@@ -1,1 +1,0 @@
-gcc src2/*.c -Lminilibx-linux -lmlx_Linux -lXext -lX11 -lm -lz
