@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_data.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/23 17:37:05 by jmacmill          #+#    #+#             */
+/*   Updated: 2022/03/23 18:14:01 by jmacmill         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/cub3d.h"
 
 void	read_map(int i, t_data *data)
@@ -25,12 +37,14 @@ void	read_map(int i, t_data *data)
 
 void	check_data(t_data *data)
 {
-	if (data->ea == NULL || data->no == NULL || data->so == NULL || data->we == NULL)
+	if (data->ea == NULL || data->no == NULL || data->so == NULL \
+	|| data->we == NULL)
 	{
 		write(1, "Error: blank parameter\n", 23);
 		exit(1);
 	}
-	if (access(data->ea, R_OK) != 0 || access(data->no, R_OK) != 0 || access(data->so, R_OK) != 0 || access(data->we, R_OK) != 0)
+	if (access(data->ea, R_OK) != 0 || access(data->no, R_OK) != 0 \
+	|| access(data->so, R_OK) != 0 || access(data->we, R_OK) != 0)
 	{
 		write(1, "Error: unable to get access to the textures\n", 44);
 		exit(1);
@@ -44,28 +58,17 @@ void	check_data(t_data *data)
 
 void	get_features(int *i, t_data *data)
 {
-	while (data->file[*i] && (data->file[*i] == ' ' || data->file[*i] == '\t' || data->file[*i] == '\n'))
+	while (data->file[*i] && (data->file[*i] == ' ' \
+	|| data->file[*i] == '\t' || data->file[*i] == '\n'))
 		(*i)++;
 	if (check_value("NO", *i, data))
-	{
-		(*i) += 2;
-		parse_values(i, data, &(data->no));
-	}
+		my_parsing_values(1, i, data);
 	else if (check_value("SO", *i, data))
-	{
-		(*i) += 2;
-		parse_values(i, data, &(data->so));
-	}
+		my_parsing_values(2, i, data);
 	else if (check_value("WE", *i, data))
-	{
-		(*i) += 2;
-		parse_values(i, data, &(data->we));
-	}
+		my_parsing_values(3, i, data);
 	else if (check_value("EA", *i, data))
-	{
-		(*i) += 2;
-		parse_values(i, data, &(data->ea));
-	}
+		my_parsing_values(4, i, data);
 	else if (check_color('C', *i, data))
 	{
 		(*i) += 1;
@@ -104,4 +107,3 @@ void	parse_data(t_data *data)
 	check_data(data);
 	read_map(i, data);
 }
-

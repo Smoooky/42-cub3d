@@ -156,6 +156,11 @@ void	init_player(t_data *data);
 void	init_data(t_data *data);
 void	free_and_exit(t_data *data, int flag);
 void	read_file(t_data *data, char *map);
+void	check_map_error(void);
+void	free_param(char **param);
+int     ft_count(const char *s, char c);
+int     to_hex(int r, int g, int b);
+void	my_parsing_values(int a, int *i, t_data *data);
 /* End of functions for parsing*/
 
 int		ft_key_press(int keycode, t_raycast *rc);

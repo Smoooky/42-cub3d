@@ -1,8 +1,8 @@
-NO ./textures/no_tex.xpm
+NO ./textures/wood.xpm
 
-		EA 		./textures/ea_tex.xpm
-    WE     ./textures/we_tex.xpm
-  SO    ./textures/so_tex.xpm
+		EA 		./textures/bark_roughness.xpm
+    WE     ./textures/road_normal.xpm
+  SO    ./textures/wood_2.xpm
 
 C 1,255,233
 F 245,230,120

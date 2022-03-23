@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_check.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/23 17:26:58 by jmacmill          #+#    #+#             */
+/*   Updated: 2022/03/23 18:07:15 by jmacmill         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/cub3d.h"
 
 int	check_value(char *param, int i, t_data *data)
@@ -22,40 +34,25 @@ void	check_error(t_data *data, int j, int i)
 		if (data->map[j][i] && data->map[j][i] != '0'
 			&& data->map[j][i] != '1' && check_s_t(data->map[j][i], 1)
 			&& !check_plr(data->map[j][i]))
-		{
-			write(1, "Error: map error\n", 17);
-			exit(1);
-		}
+			check_map_error();
 		if (data->map[j][i] == '0')
 		{
 			if ((data->map[j - 1] && ft_strlen(data->map[j - 1]) < i)
 				|| (data->map[j - 1][i] && check_s_t(data->map[j - 1][i], 0)))
-			{
-				write(1, "Error: map error\n", 17);
-				exit(1);
-			}
+				check_map_error();
 			if ((data->map[j + 1] && ft_strlen(data->map[j + 1]) < i)
 				|| (data->map[j + 1][i] && check_s_t(data->map[j + 1][i], 0)))
-			{
-				write(1, "Error: map error\n", 17);
-				exit(1);
-			}
+				check_map_error();
 		}
 		if (data->map[j][i] && check_plr(data->map[j][i]) && !data->plr_ch)
 			data->plr_ch = data->map[j][i];
 		else if (data->map[j][i] && check_plr(data->map[j][i]) && data->plr_ch)
-		{
-			write(1, "Error: map error\n", 17);
-			exit(1);
-		}
+			check_map_error();
 		i++;
 		if ((check_s_t(data->map[j][i], 0) || data->map[j][i] == '\n'
 			|| data->map[j][i] == '\0') && (data->map[j][i - 1] != '1'
 			&& check_s_t(data->map[j][i - 1], 1)))
-		{
-			write(1, "Error: map error\n", 17);
-			exit(1);
-		}
+			check_map_error();
 	}
 }
 

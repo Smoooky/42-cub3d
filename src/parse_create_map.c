@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_create_map.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/23 17:37:02 by jmacmill          #+#    #+#             */
+/*   Updated: 2022/03/23 18:00:17 by jmacmill         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/cub3d.h"
 
 int	check_size_map(int i, t_data *data)
@@ -22,13 +34,6 @@ int	check_size_map(int i, t_data *data)
 			++save;
 	}
 	return (size - save);
-}
-
-bool	check_s_t(char a, int check)
-{
-	if (check)
-		return (a != ' ' && a != '\t');
-	return (a == ' ' || a == '\t');
 }
 
 void	check_first_last_string(int j, t_data *data)
@@ -68,6 +73,25 @@ void	make_array_map(int i, t_data *data)
 	data->map[j] = NULL;
 }
 
+static void	create_error(int i)
+{
+	if (i == 1)
+	{
+		write(1, "Error: parameters problem\n", 26);
+		exit(1);
+	}
+	if (i == 2)
+	{
+		write(1, "Error: map is open\n", 19);
+		exit(1);
+	}
+	if (i == 3)
+	{
+		write(1, "Error: map error\n", 17);
+		exit(1);
+	}
+}
+
 void	map_error(t_data *data)
 {
 	int	i;
@@ -81,15 +105,9 @@ void	map_error(t_data *data)
 		while (data->map[j][i] && check_s_t(data->map[j][i], 0))
 			i++;
 		if (i == 0 && data->map[j][i] == '\0')
-		{
-			write(1, "Error: parameters problem\n", 26);
-			exit(1);
-		}
+			create_error(1);
 		if (data->map[j][i] && data->map[j][i] != '1')
-		{
-			write(1, "Error: map is open\n", 19);
-			exit(1);
-		}
+			create_error(2);
 		check_error(data, j, i);
 		j++;
 		if (!data->map[j + 1])
@@ -99,8 +117,5 @@ void	map_error(t_data *data)
 		}
 	}
 	if (!data->plr_ch)
-	{
-		write(1, "Error: map error\n", 17);
-		exit(1);
-	}
+		create_error(3);
 }

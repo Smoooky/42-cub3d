@@ -1,33 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_color.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/23 17:36:57 by jmacmill          #+#    #+#             */
+/*   Updated: 2022/03/23 18:03:59 by jmacmill         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/cub3d.h"
-
-static int	to_hex(int r, int g, int b)
-{
-	return (r << 16 | g << 8 | b);
-}
-
-static int	ft_count(const char *s, char c)
-{
-	size_t	i;
-	int		counter;
-
-	i = 0;
-	counter = 0;
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		if (s[i])
-			counter++;
-		while ((s[i]) && (s[i] != c))
-			i++;
-	}
-	if (counter != 3 || s[i - 1] == c)
-	{
-		write(1, "Error: problems with parameters\n", 32);
-		exit(1);
-	}
-	return (counter);
-}
 
 void	check_numbers(char **str)
 {
@@ -52,17 +35,10 @@ void	check_numbers(char **str)
 	}
 }
 
-void	free_param(char **param)
+static void	incorrect_rgb(void)
 {
-	int	i;
-
-	i = 0;
-	while (param[i])
-	{
-		free(param[i]);
-		i++;
-	}
-	free(param);
+	write(1, "Error: incorrect rgb format\n", 28);
+	exit(1);
 }
 
 void	get_values(char *str, char color, t_data *data)
@@ -83,10 +59,7 @@ void	get_values(char *str, char color, t_data *data)
 	g = ft_atoi(param[1]);
 	b = ft_atoi(param[2]);
 	if (r > 255 || g > 255 || b > 255)
-	{
-		write(1, "Error: incorrect rgb format\n", 28);
-		exit(1);
-	}
+		incorrect_rgb();
 	if (color == 'F')
 		data->floor = to_hex(r, g, b);
 	else if (color == 'C')
@@ -99,8 +72,9 @@ void	parse_color(int *i, t_data *data, char color)
 {
 	int		pos;
 	char	*str;
-	
-	while (data->file[*i] && data->file[*i] != '\n' && (data->file[*i] == ' ' || data->file[*i] == '\t'))
+
+	while (data->file[*i] && data->file[*i] != '\n' \
+	&& (data->file[*i] == ' ' || data->file[*i] == '\t'))
 		(*i)++;
 	pos = *i;
 	if (data->file[*i] == ',' || data->file[*i] == '\n')
