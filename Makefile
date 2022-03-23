@@ -6,7 +6,7 @@ SRCDIR		= ./src/
 SRCNAMES	= $(shell ls $(SRCDIR) | grep -E ".+\.c")
 SRC 		= $(addprefix $(SRCDIR), $(SRCNAMES))
 OBJ			= $(SRC:.c=.o)
-INC 		= ./inc/
+INC 		= ./inc/cub3d.h
 BUILDDIR 	= ./build/
 BUILDOBJS 	= $(addprefix $(BUILDDIR), $(SRCNAMES:.c=.o))
 FLAGS_MAC	= -framework OpenGL -framework AppKit
@@ -36,7 +36,7 @@ $(BUILDDIR)%.o:$(SRCDIR)%.c
 	$(CC) -I$(LIBINC) -I$(INC) $(CFLAGS) -g -o $@ -c $<
 
 # Project file rule
-$(NAME): $(BUILDOBJS)
+$(NAME): $(BUILDOBJS) $(INC)
 	$(CC) -g -o $(NAME) $(BUILDOBJS) $(LIBFT) $(MLX) $(FLAGS_MAC)
 
 # Libft rule

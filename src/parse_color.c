@@ -6,7 +6,7 @@
 /*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:36:57 by jmacmill          #+#    #+#             */
-/*   Updated: 2022/03/23 18:36:02 by jmacmill         ###   ########.fr       */
+/*   Updated: 2022/03/23 20:23:19 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	check_numbers(char **str)
 		{
 			if (!ft_isdigit(str[i][j]))
 			{
-				printf("%c\n", str[i][j]);
 				write(1, "Error: not a number\n", 20);
 				exit(1);
 			}
