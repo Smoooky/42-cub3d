@@ -6,7 +6,7 @@
 /*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 13:33:32 by sstyr             #+#    #+#             */
-/*   Updated: 2022/03/23 19:44:33 by jmacmill         ###   ########.fr       */
+/*   Updated: 2022/03/23 19:58:49 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,16 @@ void	ft_init_sub(t_raycast *rc)
 	rc->data.mlx_win = NULL;
 }
 
-void	ft_init(t_raycast *rc)
+void	ft_init(t_raycast *rc, t_data *data)
 {
+	int	swap;
+
+	swap = 0;
+	swap = data->plr_x;
+	data->plr_x = data->plr_y;
+	data->plr_y = swap;
+	data->map[data->plr_x][data->plr_y] = '0';
+	rc->config = data;
 	rc->nblines = 0;
 	rc->count = 0;
 	rc->screenx = 960;

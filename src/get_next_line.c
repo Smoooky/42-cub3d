@@ -6,7 +6,7 @@
 /*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 19:45:07 by jmacmill          #+#    #+#             */
-/*   Updated: 2022/03/23 19:47:31 by jmacmill         ###   ########.fr       */
+/*   Updated: 2022/03/23 20:03:24 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ int	get_next_line(int fd, char **line)
 	(*line)[0] = 0;
 	if (!line)
 		return (-1);
-	while ((r = read(fd, &c, 1)) && len++ && c != '\n')
+	r = read(fd, &c, 1);
+	while (r && len++ && c != '\n')
 	{
 		tmp = malloc(len);
 		if (!tmp)
@@ -83,6 +84,7 @@ int	get_next_line(int fd, char **line)
 		while (i < len - 2)
 			ft_fill(tmp, line, &i);
 		ft_finish(tmp, line, c, i);
+		r = read(fd, &c, 1);
 	}
 	return (r);
 }

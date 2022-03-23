@@ -119,7 +119,7 @@ typedef struct		s_raycast
     t_data          *config;
 }					t_raycast;
 
-void	ft_init(t_raycast *rc);
+void	ft_init(t_raycast *rc, t_data *data);
 int		ft_mlx(t_raycast *rc);
 void	ft_init_ray(t_raycast *rc);
 void	ft_error(t_raycast *rc, char *str);
