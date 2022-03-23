@@ -50,9 +50,6 @@ void	get_values(char *str, char color, t_data *data)
 	long long	b;
 
 	commas = ft_count(str, ',');
-	param = (char **)malloc(sizeof(char *) * commas + 1);
-	if (!param)
-		exit(1);
 	param = ft_split(str, ',');
 	check_numbers(param);
 	r = ft_atoi(param[0]);
@@ -93,6 +90,7 @@ void	parse_color(int *i, t_data *data, char color)
 	{
 		str = ft_substr(data->file, pos, (*i) - pos);
 		get_values(str, color, data);
+		free(str);
 	}
 }
 

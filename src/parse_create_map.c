@@ -63,6 +63,8 @@ void	make_array_map(int i, t_data *data)
 	size = check_size_map(i, data);
 	i = save_i;
 	data->map = (char **)malloc(sizeof(char *) * (size + 2));
+	if (!data->map)
+		exit(1);
 	while (i > 0 && data->file[i - 1] != '\n')
 		--i;
 	while (j < size + 1)

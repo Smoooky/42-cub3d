@@ -27,7 +27,8 @@ int	ft_key_press(int keycode, t_raycast *rc)
 	else if (keycode == RIGHT_KEY)
 		rc->data.rotate_right = 1;
 	else if (keycode == ESC_KEY)
-		ft_error(rc, "Esc button\n");
+		ft_exit(rc);
+//		ft_error(rc, "Esc button\n");
 	return (1);
 }
 

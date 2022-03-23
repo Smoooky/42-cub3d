@@ -14,8 +14,8 @@
 
 int	ft_exit(t_raycast *rc)
 {
-	if (rc->error == 0)
-		ft_error(rc, "Error = 0\n");
+//	if (rc->error == 0)
+//		ft_error(rc, "Error = 0\n");
 	if (rc->data.img)
 		mlx_destroy_image(rc->data.mlx_ptr, rc->data.img);
 	if (rc->texture[0].img)
@@ -39,31 +39,25 @@ void	ft_error(t_raycast *rc, char *str)
 	rc->error = 1;
 	write(1, "Error\n", 6);
 	write(1, str, ft_strlen(str));
-	if (rc->config->no)
-		free(rc->config->no);
-	if (rc->config->so)
-		free(rc->config->so);
-	if (rc->config->we)
-		free(rc->config->we);
-	if (rc->config->ea)
-		free(rc->config->ea);
-	if (rc->config->map)
-	{
-		while (++i < rc->nblines)
-			free(rc->config->map[i]);
-	}
-	if (rc->config)
-	{
-		// free(rc->config->ceiling);
-		// free(rc->config->floor);	
-		free(rc->config);
-	}
-	if (rc->config->file)
-	{
-		free(rc->config->file);
-	}
-	
-	if (rc->config->map)
-		free(rc->config->map);
+//	if (rc->config->no)
+//		free(rc->config->no);
+//	if (rc->config->so)
+//		free(rc->config->so);
+//	if (rc->config->we)
+//		free(rc->config->we);
+//	if (rc->config->ea)
+//		free(rc->config->ea);
+//	if (rc->config->map)
+//	{
+//		while (++i < rc->nblines)
+//			free(rc->config->map[i]);
+//	}
+//	if (rc->config->file)
+//	{
+//		free(rc->config->file);
+//	}
+//
+//	if (rc->config->map)
+//		free(rc->config->map);
 	ft_exit(rc);
 }

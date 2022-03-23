@@ -32,6 +32,10 @@ void	parse_values(int *i, t_data *data, char **param)
 		write(1, "Error: parameter is blank\n", 26);
 		exit(1);
 	}
+//	int i = 0;
+//	while ((*param)++)
+//		free(*param);
+//	free(*param);
 	*param = ft_substr(data->file, pos, (*i) - pos);
 }
 
