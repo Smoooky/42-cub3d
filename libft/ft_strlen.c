@@ -3,15 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmacmill <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 22:19:04 by jmacmill            #+#    #+#             */
-/*   Updated: 2021/12/18 19:29:25 by jmacmill           ###   ########.fr       */
+/*   Created: 2022/03/23 19:40:18 by jmacmill          #+#    #+#             */
+/*   Updated: 2022/03/23 19:40:19 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// Created by vitya on 23.04.2021.
-//
 
 #include "libft.h"
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_hooks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sstyr <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 13:33:32 by sstyr             #+#    #+#             */
-/*   Updated: 2022/03/14 13:33:34 by sstyr            ###   ########.fr       */
+/*   Updated: 2022/03/23 19:45:40 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	ft_key_press(int keycode, t_raycast *rc)
 		rc->data.rotate_right = 1;
 	else if (keycode == ESC_KEY)
 		ft_exit(rc);
-//		ft_error(rc, "Esc button\n");
 	return (1);
 }
 

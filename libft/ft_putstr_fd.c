@@ -3,15 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmacmill <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 22:18:36 by jmacmill            #+#    #+#             */
-/*   Updated: 2022/01/27 20:18:17 by jmacmill           ###   ########.fr       */
+/*   Created: 2022/03/23 19:39:01 by jmacmill          #+#    #+#             */
+/*   Updated: 2022/03/23 19:39:02 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// Created by Mickey Rudge on 5/3/21.
-//
 
 #include "libft.h"
 

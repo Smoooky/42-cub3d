@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmacmill <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 22:18:18 by jmacmill            #+#    #+#             */
-/*   Updated: 2022/01/27 20:18:17 by jmacmill           ###   ########.fr       */
+/*   Created: 2022/03/23 19:37:54 by jmacmill          #+#    #+#             */
+/*   Updated: 2022/03/23 19:37:55 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Created by vitya on 23.04.2021.
-//
-// Функция заполняет массив s1,  символом с n раз и возвращает массив s1
 #include "libft.h"
 
 void	*ft_memset(void *s1, int c, size_t n)

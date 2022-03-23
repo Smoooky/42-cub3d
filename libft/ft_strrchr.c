@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmacmill <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 22:19:21 by jmacmill            #+#    #+#             */
-/*   Updated: 2022/01/27 20:18:17 by jmacmill           ###   ########.fr       */
+/*   Created: 2022/03/23 19:40:49 by jmacmill          #+#    #+#             */
+/*   Updated: 2022/03/23 19:40:50 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Created by vitya on 28.04.2021.
-//
-//Функция ищет последний входящий байт равный ch, работает как strchr.
 #include "libft.h"
 
 char	*ft_strrchr(const char *str, int ch)

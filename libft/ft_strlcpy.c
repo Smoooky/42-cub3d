@@ -3,18 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmacmill <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 22:19:01 by jmacmill            #+#    #+#             */
-/*   Updated: 2022/01/27 20:18:17 by jmacmill           ###   ########.fr       */
+/*   Created: 2022/03/23 19:40:12 by jmacmill          #+#    #+#             */
+/*   Updated: 2022/03/23 19:40:13 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Created by Mickey Rudge on 4/25/21.
-//
-// Коприует из строки src  в строку dest не более чем n-1 символов и
-// устанавливает в конец строки нулевой символ
-// Возвращает размер строки по исходному массиву
 #include "libft.h"
 
 size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t n)

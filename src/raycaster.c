@@ -6,7 +6,7 @@
 /*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 13:33:32 by sstyr             #+#    #+#             */
-/*   Updated: 2022/03/23 18:23:42 by jmacmill         ###   ########.fr       */
+/*   Updated: 2022/03/23 19:48:40 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ int	ft_mlx(t_raycast *rc)
 	mlx_hook(rc->data.mlx_win, 2, 1L << 0, ft_key_press, rc);
 	mlx_loop_hook(rc->data.mlx_ptr, ft_raycasting, rc);
 	mlx_hook(rc->data.mlx_win, 3, 1L << 1, ft_key_release, rc);
+	mlx_hook(rc->data.mlx_win, 17, 0, ft_exit, rc);
 	mlx_loop(rc->data.mlx_ptr);
 	return (0);
 }

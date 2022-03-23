@@ -7,11 +7,6 @@ int	check_string(char c)
 	return (0);
 }
 
-// bool	no_number(char a)
-// {
-// 	return !(a >= '0' && a <= '9');
-// }
-
 void	parse_values(int *i, t_data *data, char **param)
 {
 	int	pos;
@@ -32,10 +27,6 @@ void	parse_values(int *i, t_data *data, char **param)
 		write(1, "Error: parameter is blank\n", 26);
 		exit(1);
 	}
-//	int i = 0;
-//	while ((*param)++)
-//		free(*param);
-//	free(*param);
 	*param = ft_substr(data->file, pos, (*i) - pos);
 }
 
@@ -43,6 +34,7 @@ int	main(int argc, char **argv)
 {
 	t_data		*data;
 	t_raycast	rc;
+	int			swap;
 
 	if (argc != 2 || ft_strncmp(&argv[1][ft_strlen(argv[1]) - 4], ".cub", 4))
 	{
@@ -61,45 +53,14 @@ int	main(int argc, char **argv)
 		read_file(data, argv[1]);
 		parse_data(data);
 		init_player(data);
-		
-		
-		
 		ft_init(&rc);
-		write(1, "BBB\n", 4);
-		printf("Player position: %d %d\n", data->plr_x, data->plr_y);
-		int i;
-		
-
-		i = 0;
-		while (data->map[i])
-		{
-			printf("%s\n", data->map[i]);
-			i++;
-		}
-		
-		int swap;
-
 		swap = 0;
 		swap = data->plr_x;
 		data->plr_x = data->plr_y;
 		data->plr_y = swap;
-
-		printf("Player letter: %c\n", data->plr_ch);
-		
 		data->map[data->plr_x][data->plr_y] = '0';
-		printf("Player letter: %c\n", data->plr_ch);
-
-		i = 0;
-		while (data->map[i])
-		{
-			printf("%s\n", data->map[i]);
-			i++;
-		}
-		
 		rc.config = data;
 		ft_count_lines(&rc);
 		ft_mlx(&rc);
-
 	}
-    
 }

@@ -3,15 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmacmill <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 22:18:33 by jmacmill            #+#    #+#             */
-/*   Updated: 2022/01/27 20:18:17 by jmacmill           ###   ########.fr       */
+/*   Created: 2022/03/23 19:38:31 by jmacmill          #+#    #+#             */
+/*   Updated: 2022/03/23 19:38:53 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// Created by vitya on 07.05.2021.
-//
 
 #include "libft.h"
 

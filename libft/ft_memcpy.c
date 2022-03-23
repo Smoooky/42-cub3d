@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmacmill <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 22:18:10 by jmacmill            #+#    #+#             */
-/*   Updated: 2022/01/27 20:18:17 by jmacmill           ###   ########.fr       */
+/*   Created: 2022/03/23 19:37:33 by jmacmill          #+#    #+#             */
+/*   Updated: 2022/03/23 19:37:34 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Created by Mickey Rudge on 4/25/21.
-//
-// Копирует н байтов из одного массива в другой
 #include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)

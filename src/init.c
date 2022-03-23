@@ -6,7 +6,7 @@
 /*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 13:33:32 by sstyr             #+#    #+#             */
-/*   Updated: 2022/03/23 18:40:35 by jmacmill         ###   ########.fr       */
+/*   Updated: 2022/03/23 19:44:33 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	ft_init_ray(t_raycast *rc)
 
 void	ft_init_sub(t_raycast *rc)
 {
-	//rc->config->plr_ch = 'x';
 	rc->error = 0;
 	rc->data.img = NULL;
 	rc->texture[0].img = NULL;
@@ -59,26 +58,13 @@ void	ft_init_sub(t_raycast *rc)
 	rc->texture[2].img = NULL;
 	rc->texture[3].img = NULL;
 	rc->data.mlx_win = NULL;
-	// rc->config->map = NULL;
 }
 
 void	ft_init(t_raycast *rc)
 {
-//	ft_count_lines(rc);
-	// rc->config->map = NULL;
-	// rc->config->no = NULL;
-	// rc->config->so = NULL;
-	// rc->config->we = NULL;
-	// rc->config->ea = NULL;
-	// rc->config->floor = -1;
-	// rc->config->ceiling = -1;
 	rc->nblines = 0;
-	// rc->config->plr_x = 0;
-	// rc->config->plr_y = 0;
 	rc->count = 0;
 	rc->screenx = 960;
 	rc->screeny = 540;
-	
-	
 	ft_init_sub(rc);
 }

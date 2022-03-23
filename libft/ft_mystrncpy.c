@@ -3,15 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_mystrncpy.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmacmill <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 22:18:21 by jmacmill            #+#    #+#             */
-/*   Updated: 2022/01/27 20:18:17 by jmacmill           ###   ########.fr       */
+/*   Created: 2022/03/23 19:38:00 by jmacmill          #+#    #+#             */
+/*   Updated: 2022/03/23 19:38:01 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// Created by Mickey Rudge on 5/11/21.
-//
 
 #include "libft.h"
 

@@ -3,16 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmacmill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 22:19:30 by jmacmill          #+#    #+#             */
-/*   Updated: 2021/12/18 19:29:25 by jmacmill         ###   ########.fr       */
+/*   Created: 2022/03/23 19:41:01 by jmacmill          #+#    #+#             */
+/*   Updated: 2022/03/23 19:41:02 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Created by vitya on 05.05.2021.
-//
-// Функция вырезает подстроку из строки s и копирует ее в новый массив
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
