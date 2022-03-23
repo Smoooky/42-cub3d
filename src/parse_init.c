@@ -6,7 +6,7 @@
 /*   By: jmacmill <jmacmill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 17:37:09 by jmacmill          #+#    #+#             */
-/*   Updated: 2022/03/23 18:14:27 by jmacmill         ###   ########.fr       */
+/*   Updated: 2022/03/23 18:32:05 by jmacmill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,12 @@ void	my_parsing_values(int a, int *i, t_data *data)
 	if (a == 3)
 	{
 		(*i) += 2;
-		parse_values(i, data, &(data->so));
+		parse_values(i, data, &(data->we));
 	}
 	if (a == 4)
 	{
 		(*i) += 2;
-		parse_values(i, data, &(data->so));
+		parse_values(i, data, &(data->ea));
 	}
 }
 
