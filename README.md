@@ -8,7 +8,7 @@ maze. We made this project with partner (https://github.com/yakomisar). He was r
 checking validity of the map. My part was to implement ray-casting and key treatment. Subject of this project is in 
 subject.pdf
 
-## How to launch
+## How to launch?
 
 Use ``make`` to compile the project on Mac or ``make linux`` on linux.
 Then run ``./cub3d maps/1.ber`` to render map.
